@@ -1,0 +1,10 @@
+.transition{
+    transition: transform 1s,  ease-in;
+    cursor: zoom-out;
+    /* border:1px solid red; */
+    border-width: 1px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.transition:hover{
+    transform: scale(1.1);
+}
