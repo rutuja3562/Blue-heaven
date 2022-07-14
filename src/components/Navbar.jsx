@@ -171,12 +171,14 @@ export const Navbar = () => {
         <img className="logo" alt="" src={""} />
         <ul className={"nav-links"}>
           <li>
-            <Link to="/Home" style={{ textDecoration: "none" }}>
+            <Link to="/" style={{ textDecoration: "none" }}>
               <Text className="textTT">HOME</Text>
             </Link>
           </li>
           <li>
-            <Text className="textTT">Products & Services</Text>
+            <Link to="/product">
+              <Text className="textTT">Products & Services</Text>
+            </Link>
           </li>
           <li>
             <Text className="textTT">About Us</Text>
@@ -212,7 +214,7 @@ export const Navbar = () => {
           </li>
           <li className="user">
             <a className="user">
-            {/* <img className="logo1" alt="" src={!profile ? group : profile} />*/}
+              {/* <img className="logo1" alt="" src={!profile ? group : profile} />*/}
             </a>
           </li>
           <button

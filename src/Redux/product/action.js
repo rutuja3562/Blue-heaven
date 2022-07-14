@@ -56,7 +56,7 @@ export const addtocartaction = (data) => ({
 
 export const addtoCart = (product) => (dispatch) => {
   axios
-    .post("https://blueheavenapi.herokuapp.com/products/vegetablecart", product)
+    .post("https://blueheavenapi.herokuapp.com/productcart", product)
     .then((res) => {
       // console.log("add", res.data);
       dispatch(addtocartaction(res.data));
@@ -73,7 +73,7 @@ export const fetchcartaction = (data) => ({
 
 export const fetchtoCart = () => (dispatch) => {
   axios
-    .get("https://blueheavenapi.herokuapp.com/products/productcart")
+    .get("https://blueheavenapi.herokuapp.com/productcart")
     .then((res) => {
       // console.log("get", res.data);
       dispatch(fetchcartaction(res.data));

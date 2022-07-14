@@ -24,9 +24,9 @@ export const Product = () => {
       dispatch(fetchData());
     }
   }, [dispatch, product?.length]);
-  useEffect(()=>{
+  useEffect(() => {
     getdata();
-  },[])
+  }, []);
   const getdata = async () => {
     await fetch("https://blueheavenapi.herokuapp.com/products")
       .then((data) => data.json())
@@ -44,100 +44,62 @@ export const Product = () => {
       <Box mt={"20px"} mb={"20px"}></Box>
       <Box border={"1px solid #e8e8e8"}>
         <Flex>
-          <Box width={"15%"} textAlign={"left"} m={"1rem"} fontWeight={300}>
+          <Box width={"100%"} textAlign={"left"} m={"1rem"} fontWeight={300}>
             <Text
               fontSize={"14px"}
               fontWeight={500}
               borderBottom={"1px solid #e8e8e8"}
             >
-              Category
-            </Text>
-            <Text fontSize={"12px"} fontWeight={500}>
-              Fruites & Vegetables
+              Products & Services
             </Text>
             <Flex>
-              {/*  <FilterComponent />*/}
-              <Box width={"100%"} mt={"1.5rem"}>
-                <Box mb="1rem" borderBottom="1px solid #e8e8e8" pb={"1rem"}>
-                  <Box mb={"2rem"}>
-                    <select
-                      id="cars1"
-                      // onChange={HandleSelect}
-                    >
-                      <option>price</option>
-                      <option value="low">Low To High</option>
-                      <option value="high">High To Low</option>
-                    </select>
-                  </Box>
-                  <CheckboxGroup
-                    colorScheme="green"
-                    defaultValue={brandValue}
+              <Flex width={"100%"} mt={"1.5rem"}>
+                <Box width="25%">
+                  <Text>Makeup</Text>
+                </Box>
+                <Box mb={"2rem"} width="20%">
+                  <select
+                    id="cars1"
+                    // onChange={HandleSelect}
+                  >
+                    <option>price</option>
+                    <option value="low">Low To High</option>
+                    <option value="high">High To Low</option>
+                  </select>
+                </Box>
+                <Box mb={"2rem"} width="20%">
+                  <select
+                    id="cars1"
                     // onChange={brandValueHandler}
                   >
-                    <Text fontSize={"14px"} fontWeight={"500"} mb={"1rem"}>
-                      Brand
-                    </Text>
-                    <VStack
-                      direction={["column", "row"]}
-                      alignItems={"baseline"}
-                      fontSize={"12px"}
-                      fontWeight={"375"}
-                    >
-                      <Checkbox value="Organic">Organic</Checkbox>
-                      <Checkbox value="Hoovu Fresh">Hoovu Fresh</Checkbox>
-                      <Checkbox value="Brotos">Brotos</Checkbox>
-                      <Checkbox value="Fresho">Fresho</Checkbox>
-                    </VStack>
-                  </CheckboxGroup>
+                    <option>Brand</option>
+                    <option value="Lakme">Lakme</option>
+                    <option value="MAYBELLINE NEW YORK">
+                      MAYBELLINE NEW YORK
+                    </option>
+                  </select>
                 </Box>
-                <Box pb={"1rem"} mb="1rem" borderBottom="1px solid #e8e8e8">
-                  <CheckboxGroup
-                    colorScheme="green"
-                    defaultValue={packSize}
-                    // onChange={packSizeHandler}
+                <Box mb={"2rem"} width="20%">
+                  <select
+                    id="cars1"
+                    // onChange={brandValueHandler}
                   >
-                    <Text fontSize={"14px"} fontWeight={"500"} mb={"1rem"}>
-                      Pack Size
-                    </Text>
-                    <VStack
-                      direction={["column", "row"]}
-                      alignItems={"baseline"}
-                      fontSize={"12px"}
-                      fontWeight={"375"}
-                    >
-                      <Checkbox value="1">1 kg</Checkbox>
-                      <Checkbox value="2">2 pcs</Checkbox>
-                      <Checkbox value="40">40cm</Checkbox>
-                      <Checkbox value="100">100 g</Checkbox>
-                      <Checkbox value="250">250 g</Checkbox>
-                    </VStack>
-                  </CheckboxGroup>
+                    <option>Price</option>
+                    <option value="Lakme">0-500</option>
+                    <option value="MAYBELLINE NEW YORK">501-1000</option>
+                    <option value="MAYBELLINE NEW YORK">1001-1500</option>
+                    <option value="MAYBELLINE NEW YORK">1501-2000</option>
+                  </select>
                 </Box>
-                <Box pb={"1rem"} mb="1rem" borderBottom="1px solid #e8e8e8">
-                  <CheckboxGroup
-                    colorScheme="green"
-                    defaultValue={priceValue}
-                    // onChange={priceHandler}
-                  >
-                    <Text fontSize={"14px"} fontWeight={"500"} mb={"1rem"}>
-                      Price
-                    </Text>
-                    <VStack
-                      direction={["column", "row"]}
-                      alignItems={"baseline"}
-                      fontSize={"12px"}
-                      fontWeight={"375"}
-                    >
-                      <Checkbox value="0-50">0-50</Checkbox>
-                      <Checkbox value="51-100">51-100</Checkbox>
-                      <Checkbox value="101-150">101-150</Checkbox>
-                    </VStack>
-                  </CheckboxGroup>
-                </Box>
-              </Box>
+              </Flex>
             </Flex>
           </Box>
-          <Box width="85%" borderLeft={"1px solid #e8e8e8"}>
+        </Flex>
+        <Flex>
+          <Box
+            width="100%"
+            borderLeft={"1px solid #e8e8e8"}
+          >
             <Stack
               width={"97%"}
               direction="row"
@@ -150,7 +112,7 @@ export const Product = () => {
                 fontSize={"20px"}
                 fontWeight={400}
               >
-                Fruits & Vegetables ({products.length})
+                Products ({products.length})
               </Text>
             </Stack>
             <Flex flexWrap={"wrap"} borderTop={"1px solid #e8e8e8"}>

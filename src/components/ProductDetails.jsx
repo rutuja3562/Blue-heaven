@@ -13,11 +13,10 @@ import {
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router";
-// import {
-//   addtoCart,
-//   addtocartaction,
-//   getSingleProduct,
-// } from "../../Redux/product/action";
+import {
+  addtocartaction,
+  getSingleProduct,
+} from "../Redux/product/action";
 import { addtoCart } from "../Redux/product/action";
 import { MdLocalShipping } from "react-icons/md";
 import { Link as RouterLink } from "react-router-dom";
@@ -25,12 +24,12 @@ import { Link as RouterLink } from "react-router-dom";
 export const ProductDetails = () => {
   const dispatch = useDispatch();
   const currentProduct = useSelector((state) => state.products.currentProduct);
-  // console.log("curr", currentProduct);
+  console.log("curr", currentProduct);
   const { id } = useParams();
   // console.log("DDD",id)
-//   useEffect(() => {
-//     dispatch(getSingleProduct(id));
-//   }, []);
+  useEffect(() => {
+    dispatch(getSingleProduct(id));
+  }, []);
   const handleAddproduct = (currentProduct) => {
     dispatch(addtoCart(currentProduct));
   };

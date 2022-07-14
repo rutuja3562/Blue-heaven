@@ -21,7 +21,6 @@ export const ProductComponent = ({ props }) => {
   const handleCart = (props) => {
     // console.log("props",props)
     // dispatch(addtocartaction(props))
-
     dispatch(addtoCart(props));
   };
   // console.log("PRops.id",props._id)
@@ -34,7 +33,7 @@ export const ProductComponent = ({ props }) => {
         className="transition"
         role={"group"}
         p={6}
-        // border="1px solid blue"
+        border="1px solid blue"
         boxShadow={"md"}
         rounded={"lg"}
         pos={"relative"}
@@ -51,8 +50,10 @@ export const ProductComponent = ({ props }) => {
             <Image
               rounded={"lg"}
               objectFit={"cover"}
-              // border="1px solid red"
+              border="1px solid red"
               src={props.imgUrl}
+              height="250px"
+              width="80%"
             />
           </Flex>
         </Link>
