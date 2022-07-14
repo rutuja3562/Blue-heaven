@@ -7,7 +7,11 @@ export const Home = () => {
     <>
       <Box width="100%" margin={"auto"} marginTop="20px">
         <Flex width="75%" margin={"auto"}>
-          <Image src="https://3.imimg.com/data3/BX/CS/MY-3792183/foundation-250x250.jpg" />
+          <Box>
+            <Image src="https://3.imimg.com/data3/BX/CS/MY-3792183/foundation-250x250.jpg" />
+
+            <Text bg="grey"> Foundation</Text>
+          </Box>
           <Image src="https://3.imimg.com/data3/BK/MD/MY-3792183/01-250x250.jpg" />
           <Image src="https://3.imimg.com/data3/RK/XF/MY-3792183/01-250x250.jpg" />
           <Image src="https://3.imimg.com/data3/ML/RO/MY-3792183/mascara-250x250.jpg" />
@@ -276,7 +280,6 @@ export const Home = () => {
             </Box>
           </Flex>
         </Box>
-        <Box height={"350px"}></Box>
       </Box>
     </>
   );

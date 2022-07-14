@@ -8,3 +8,13 @@
 .transition:hover{
     transform: scale(1.1);
 }
+
+.linethrough{
+    text-decoration: line-through;
+}
+.borderwidth{
+    border-width: 1px;
+}
+.margin {
+    margin: 2px;
+}
