@@ -36,99 +36,16 @@ export const ProductDetails = () => {
 
   return (
     <Box width={"100%"}>
-  
       <Box
-        width={"75%"}
+        width={"100%"}
         margin={"auto"}
         border="1px solid #e8e8e8"
         mt={"3rem"}
         mb={"3rem"}
         p={"1rem 1rem 2rem 0rem "}
       >
-        <Flex justifyContent={"space-between"}>
-          <Box
-            borderRight={"1px solid #e8e8e8"}
-            width="25%"
-            textAlign={"left"}
-            p="2rem 0 1rem 1rem"
-          >
-            <Text
-              fontSize={"14px"}
-              fontWeight={"500"}
-              mb={"1rem"}
-              borderBottom={"1px solid #e8e8e8"}
-            >
-              Category
-            </Text>
-            <Text
-              fontSize={"12px"}
-              fontWeight={"500"}
-              mb={"0.5rem"}
-              // borderBottom={"1px solid #e8e8e8"}
-            >
-              Fruits & Vegetables
-            </Text>
-            <Text fontSize={"12px"} fontWeight={"500"} ml={"1rem"} mb="0.5rem">
-              Fresh Vegetables
-            </Text>
-            <UnorderedList
-              listStyleType={"none"}
-              fontSize={"12px"}
-              fontWeight={"380"}
-              ml={"1.5rem"}
-              mb={"1rem"}
-            >
-              <ListItem _hover={{ color: "#84c225" }} mb={"0.25rem"}>
-                Beans,Bringles & Okra
-              </ListItem>
-              <ListItem _hover={{ color: "#84c225" }} mb={"0.25rem"}>
-                Cabbage & Cauliflower
-              </ListItem>
-              <ListItem mb={"0.25rem"} _hover={{ color: "#84c225" }}>
-                Cucumber & Capsicum
-              </ListItem>
-              <ListItem mb={"0.25rem"} _hover={{ color: "#84c225" }}>
-                Gourd, Pumpkin, DrumStick
-              </ListItem>
-              <ListItem mb={"0.25rem"} _hover={{ color: "#84c225" }}>
-                Leafy Vegetables
-              </ListItem>
-              <ListItem mb={"0.25rem"} _hover={{ color: "#84c225" }}>
-                Potato, Onion & Tomato
-              </ListItem>
-              <ListItem mb={"0.25rem"} _hover={{ color: "#84c225" }}>
-                Root Vegetables
-              </ListItem>
-              <ListItem mb={"0.25rem"} _hover={{ color: "#84c225" }}>
-                Specialty
-              </ListItem>
-            </UnorderedList>
-            <Text
-              fontSize={"14px"}
-              fontWeight={"500"}
-              mb={"1rem"}
-              borderBottom={"1px solid #e8e8e8"}
-            >
-              Brands
-            </Text>
-            <Text
-              fontSize={"12px"}
-              fontWeight={"380"}
-              mb={"0.25rem"}
-              ml={"1rem"}
-            >
-              Fresho
-            </Text>
-            <Text
-              fontSize={"12px"}
-              fontWeight={"380"}
-              mb={"0.25rem"}
-              ml={"1rem"}
-            >
-              Fresho Potato, Onion & Tomato
-            </Text>
-          </Box>
-          <Box width="35%">
+        <Flex justifyContent={"center"}>
+          <Box width="25%" border="1px solid #e8e8e8">
             <Flex justifyContent={"center"}>
               <Image
                 rounded={"md"}
@@ -136,13 +53,22 @@ export const ProductDetails = () => {
                 src={currentProduct.imgUrl}
                 fit={"cover"}
                 align={"center"}
-                w={"100%"}
-                // border="1px solid #e8e8e8"
+                w={"50%"}
                 mt={"18%"}
+                ml="10%"
+                mr={"3rem"}
+                mb={"3rem"}
+                justifyContent="center"
               />
             </Flex>
           </Box>
-          <Box border={"1px solid #e8e8e8"} width="35%" padding={"1rem"}>
+          <Box
+            border={"1px solid #e8e8e8"}
+            padding={"1rem"}
+            ml="10%"
+            mr={"3rem"}
+            mb={"3rem"}
+          >
             <Stack spacing={{ base: 6, md: 4 }} textAlign={"left"}>
               <Box as={"header"}>
                 <Text
@@ -174,15 +100,6 @@ export const ProductDetails = () => {
                 </Text>
               </Box>
               <Box margin={"auto"}>
-                <Button
-                  mr={"5px"}
-                  bg={useColorModeValue("white")}
-                  color={useColorModeValue("gray.900")}
-                  rounded="0"
-                  border="1px solid #84c225"
-                >
-                  1
-                </Button>
                 <Link as={RouterLink} to={"/cart"}>
                   <Button
                     rounded={"none"}
@@ -190,23 +107,14 @@ export const ProductDetails = () => {
                     margin="auto"
                     p={"5px"}
                     mr={"5px"}
-                    border="1px solid #84c225"
-                    bg={useColorModeValue("#84c225")}
-                    color={useColorModeValue("white", "gray.900")}
+                    border="1px solid black"
+                    bg={useColorModeValue("white")}
+                    color={useColorModeValue("black", "gray.900")}
                     onClick={() => handleAddproduct(currentProduct)}
                   >
                     Add to cart
                   </Button>
                 </Link>
-                <Button
-                  ml="5px"
-                  bg={useColorModeValue("white")}
-                  color={useColorModeValue("gray.900")}
-                  rounded="0"
-                  border="1px solid #84c225"
-                >
-                  SAVE
-                </Button>
               </Box>
               <Stack
                 direction="row"

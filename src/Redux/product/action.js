@@ -17,13 +17,11 @@ export const fetchDataAction = (data) => {
 
 export const fetchData = (payload) => (dispatch) => {
   return axios
-    .get("https://blueheavenapi.herokuapp.com/products"
-      // , {
-      // params: {
-      //   ...payload,
-      // },
-      // }
-    )
+    .get("https://blueheavenapi.herokuapp.com/products", {
+      params: {
+        ...payload,
+      },
+    })
     .then((res) => {
       console.log("..res..", res.data);
       dispatch(fetchDataAction(res.data));

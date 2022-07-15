@@ -27,13 +27,11 @@ export const ProductComponent = ({ props }) => {
   return (
     <Box
       width={"33%"}
-      // border="1px solid blue"
     >
       <Box
         className="transition"
         role={"group"}
         p={6}
-        border="1px solid blue"
         boxShadow={"md"}
         rounded={"lg"}
         pos={"relative"}
@@ -49,8 +47,7 @@ export const ProductComponent = ({ props }) => {
           >
             <Image
               rounded={"lg"}
-              objectFit={"cover"}
-              border="1px solid red"
+              objectFit={"contain"}
               src={props.imgUrl}
               height="250px"
               width="80%"
