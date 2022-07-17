@@ -77,7 +77,7 @@ export const Cart = () => {
                   <Th color={"white"}>QUANTITY</Th>
                   <Th color={"white"}>SUBTOTAL</Th>
                   <Th color={"#555555"}>......</Th>
-                  <Th color={"black"} bg={"#c6cc74"}>
+                  <Th color={"white"} bg={"black"}>
                     Saving
                   </Th>
                 </Tr>
