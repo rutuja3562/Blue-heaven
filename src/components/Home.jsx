@@ -1,26 +1,37 @@
 import React from "react";
 import { Box, Flex, Heading, Image, Text } from "@chakra-ui/react";
 import "./styles/Home.css";
-
+import { Link } from "react-router-dom";
 export const Home = () => {
   return (
     <>
       <Box width="100%" margin={"auto"} marginTop="20px">
-        <Flex width="75%" margin={"auto"}>
+        <Flex width="75%" margin={"auto"} mb="5rem">
           <Box>
             <Image src="https://3.imimg.com/data3/BX/CS/MY-3792183/foundation-250x250.jpg" />
-
-            <Text bg="grey"> Foundation</Text>
+            <Text bg=""> Foundation</Text>
           </Box>
-          <Image src="https://3.imimg.com/data3/BK/MD/MY-3792183/01-250x250.jpg" />
-          <Image src="https://3.imimg.com/data3/RK/XF/MY-3792183/01-250x250.jpg" />
-          <Image src="https://3.imimg.com/data3/ML/RO/MY-3792183/mascara-250x250.jpg" />
-          <Image src="https://3.imimg.com/data3/NL/QG/MY-3792183/fruit-bleach-250x250.jpg" />
+          <Box>
+            <Image src="https://3.imimg.com/data3/BK/MD/MY-3792183/01-250x250.jpg" />
+            <Text>Nail Paints</Text>
+          </Box>
+          <Box>
+            <Image src="https://3.imimg.com/data3/RK/XF/MY-3792183/01-250x250.jpg" />
+            <Text>Lip Gloss</Text>
+          </Box>
+          <Box>
+            <Image src="https://3.imimg.com/data3/QC/FL/MY-3792183/fairness-scrub-250x250.jpg" />
+            <Text>Fairness Scrub</Text>
+          </Box>
+          <Box>
+            <Image src="https://3.imimg.com/data3/NL/QG/MY-3792183/fruit-bleach-250x250.jpg" />
+            <Text>Fruit Bleech</Text>
+          </Box>
         </Flex>
-        <Heading as={"h2"} fontWeight={"500"}>
+        <Heading as={"h3"} fontWeight={"400"} mb="2rem">
           About Us
         </Heading>
-        <Box width="75%" margin={"auto"}>
+        <Box width="75%" margin={"auto"} mb="2rem">
           <Text>
             Blue Heaven Cosmetics was started in 1974 by two young brothers,
             company MD's Mr.Charanjit Singh and Mr. Gurnam Singh with big dreams
@@ -29,13 +40,18 @@ export const Home = () => {
             journey revolutionizing the Indian decorative cosmetics industry.
           </Text>
         </Box>
-        <Box width={"75%"} margin="auto" mt={"2rem"}>
-          <Text fontSize={"24px"} mb={"2rem"}>
+        <Box width={"75%"} margin="auto" mt={"2rem"} mb="2rem">
+          <Heading as={"h3"} fontWeight={"400"} mb="2rem">
             Products & Services
-          </Text>
+          </Heading>
           <Flex justifyContent={"space-between"} flexWrap="wrap">
             <Box width={"23%"} objectFit="contain" className="transition">
-              <Box>
+              <Flex
+                height={"58%"}
+                objectFit="contain"
+                alignItems={"center"}
+                justifyContent="center"
+              >
                 <img
                   src={
                     "https://3.imimg.com/data3/BX/CS/MY-3792183/foundation-250x250.jpg"
@@ -43,11 +59,11 @@ export const Home = () => {
                   alt="img10"
                   width={"60%"}
                 />
-              </Box>
-              <Box>
-                <Heading p="0" m="2">
+              </Flex>
+              <Box pb="40px">
+                <Text p="0" m="2" fontSize={"20px"} fontWeight={500}>
                   Makeup
-                </Heading>
+                </Text>
                 <Text p="0" m="2" fontSize={"16"}>
                   Foundation
                 </Text>
@@ -58,12 +74,17 @@ export const Home = () => {
                   Pan Cake foundation
                 </Text>
                 <Text fontSize={"16"} color="teal" fontWeight={"500"}>
-                  View Details
+                  <Link to="/product">View Details</Link>
                 </Text>
               </Box>
             </Box>
             <Box width={"23%"} objectFit="contain" className="transition">
-              <Box>
+              <Flex
+                height={"58%"}
+                objectFit="contain"
+                alignItems={"center"}
+                justifyContent="center"
+              >
                 <img
                   src={
                     "https://4.imimg.com/data4/QY/OX/GLADMIN-3792183/1-250x250.jpg"
@@ -71,11 +92,11 @@ export const Home = () => {
                   alt="img10"
                   width={"79%"}
                 />
-              </Box>
+              </Flex>
               <Box>
-                <Heading p="0" m="2">
+                <Text p="0" m="2" fontSize={"20px"} fontWeight={500}>
                   Lipstick
-                </Heading>
+                </Text>
                 <Text fontSize={"16"} p="0" m="2">
                   Baked Break Lipstick
                 </Text>
@@ -86,12 +107,17 @@ export const Home = () => {
                   Coral Red Lipstick
                 </Text>
                 <Text fontSize={"16"} color="teal" fontWeight={"500"}>
-                  View Details
+                  <Link to="/product">View Details</Link>
                 </Text>
               </Box>
             </Box>
-            <Box width={"23%"} objectFit="contain" className="transition">
-              <Box>
+            <Box width={"23%"} className="transition">
+              <Flex
+                height={"58%"}
+                objectFit="contain"
+                alignItems={"center"}
+                justifyContent="center"
+              >
                 <img
                   src={
                     "https://3.imimg.com/data3/RK/XF/MY-3792183/01-250x250.jpg"
@@ -99,11 +125,11 @@ export const Home = () => {
                   alt="img10"
                   width={"87%"}
                 />
-              </Box>
+              </Flex>
               <Box>
-                <Heading p="0" m="2">
+                <Text p="0" m="2" fontSize={"20px"} fontWeight={500}>
                   Lips Products
-                </Heading>
+                </Text>
                 <Text fontSize={"16"} p="0" m="2">
                   Lip Gloss
                 </Text>
@@ -114,12 +140,17 @@ export const Home = () => {
                   Lip Liner
                 </Text>
                 <Text fontSize={"16"} color="teal" fontWeight={"500"}>
-                  View Details
+                  <Link to="/product">View Details</Link>
                 </Text>
               </Box>
             </Box>
             <Box width={"23%"} className="transition">
-              <Box>
+              <Flex
+                height={"58%"}
+                objectFit="contain"
+                alignItems={"center"}
+                justifyContent="center"
+              >
                 <img
                   src={
                     "https://3.imimg.com/data3/NL/QG/MY-3792183/fruit-bleach-500x500.jpg"
@@ -127,11 +158,11 @@ export const Home = () => {
                   alt="img10"
                   width={"86%"}
                 />
-              </Box>
-              <Box>
-                <Heading p="0" m="2">
+              </Flex>
+              <Box pb="40px">
+                <Text p="0" m="2" fontSize={"20px"} fontWeight={500}>
                   Bleach Cream
-                </Heading>
+                </Text>
                 <Text fontSize={"16"} p="0" m="2">
                   Fruit Bleach
                 </Text>
@@ -142,17 +173,17 @@ export const Home = () => {
                   Personal Bleach
                 </Text>
                 <Text fontSize={"16"} color="teal" fontWeight={"500"}>
-                  View Details
+                  <Link to="/product">View Details</Link>
                 </Text>
               </Box>
             </Box>
-            <Box
-              width={"23%"}
-              objectFit="contain"
-              className="transition"
-              mt={"40px"}
-            >
-              <Box>
+            <Box width={"23%"} className="transition" mt={"40px"} pb="40px">
+              <Flex
+                objectFit="contain"
+                height={"58%"}
+                alignItems={"center"}
+                justifyContent="center"
+              >
                 <img
                   src={
                     "https://3.imimg.com/data3/QC/FL/MY-3792183/fairness-scrub-250x250.jpg"
@@ -160,11 +191,11 @@ export const Home = () => {
                   alt="img10"
                   width={"60%"}
                 />
-              </Box>
+              </Flex>
               <Box>
-                <Heading p="0" m="2">
+                <Text p="0" m="2" fontSize={"20px"} fontWeight={500}>
                   Scrub
-                </Heading>
+                </Text>
                 <Text p="0" m="2" fontSize={"16"}>
                   Fairness Scrub
                 </Text>
@@ -175,18 +206,18 @@ export const Home = () => {
                   Facial Scrub
                 </Text>
                 <Text fontSize={"16"} color="teal" fontWeight={"500"}>
-                  View Details
+                  <Link to="/product">View Details</Link>
                 </Text>
               </Box>
             </Box>
 
-            <Box
-              width={"23%"}
-              objectFit="contain"
-              mt={"40px"}
-              className="transition"
-            >
-              <Box>
+            <Box width={"23%"} mt={"40px"} className="transition">
+              <Flex
+                height={"58%"}
+                objectFit="contain"
+                alignItems={"center"}
+                justifyContent="center"
+              >
                 <img
                   src={
                     "https://3.imimg.com/data3/US/UJ/MY-3792183/lip-balm-250x250.jpg"
@@ -194,11 +225,11 @@ export const Home = () => {
                   alt="img10"
                   width={"80%"}
                 />
-              </Box>
-              <Box>
-                <Heading p="0" m="2">
+              </Flex>
+              <Box pb="40px">
+                <Text p="0" m="2" fontSize={"20px"} fontWeight={500}>
                   LipCare
-                </Heading>
+                </Text>
                 <Text p="0" m="2" fontSize={"16"}>
                   Lip Balm
                 </Text>
@@ -206,75 +237,77 @@ export const Home = () => {
                   Lip Guard
                 </Text>
                 <Text fontSize={"16"} p="0" m="2"></Text>
-                <Text fontSize={"16"} color="teal" fontWeight={"500"} mt="40px">
-                  View Details
+                <Text fontSize={"16"} color="teal" fontWeight={"500"}>
+                  <Link to="/product">View Details</Link>
                 </Text>
               </Box>
             </Box>
-            <Box
-              width={"23%"}
-              objectFit="contain"
-              mt={"40px"}
-              className="transition"
-            >
-              <Box height={"60%"} objectFit="cover">
+            <Box width={"23%"} mt={"40px"} className="transition">
+              <Flex
+                height={"58%"}
+                objectFit="contain"
+                alignItems={"center"}
+                justifyContent="center"
+              >
                 <img
                   src={
                     "https://3.imimg.com/data3/ML/RO/MY-3792183/mascara-250x250.jpg"
                   }
                   alt="img10"
                   width={"60%"}
-                  height="58%"
+                  height="100%"
                 />
-              </Box>
-              <Box>
-                <Heading p="0" m="2">
+              </Flex>
+              <Box pb="40px">
+                <Text p="0" m="2" fontSize={"20px"} fontWeight={500}>
                   Eyes Products
-                </Heading>
+                </Text>
                 <Text p="0" m="2" fontSize={"16"}>
                   Maskara
                 </Text>
-                <Text fontSize={"16"} p="0" m="2">
-                  Eye Shadow
-                </Text>
+
                 <Text fontSize={"16"} p="0" m="2">
                   Eye Liner
                 </Text>
-                <Text fontSize={"16"} color="teal" fontWeight={"500"}></Text>
-                <Text fontSize={"16"} color="teal" fontWeight={"500"} mt="-6px">
-                  View Details
+
+                <Text fontSize={"16"} color="teal" fontWeight={"500"} mt="40px">
+                  <Link to="/product">View Details</Link>
                 </Text>
               </Box>
             </Box>
             <Box
+              flexDirection={"column"}
               width={"23%"}
-              objectFit="contain"
               mt={"40px"}
               className="transition"
             >
-              <Box height={"60%"} objectFit="contain">
+              <Flex
+                height={"58%"}
+                objectFit="contain"
+                alignItems={"center"}
+                justifyContent="center"
+              >
                 <img
                   src={
                     "https://3.imimg.com/data3/WJ/EO/MY-3792183/01-250x250.jpg"
                   }
                   alt="img10"
                   width={"60%"}
-                  height="58%"
                 />
-              </Box>
-              <Box>
-                <Heading p="0" m="2">
-                  LipCare
-                </Heading>
+              </Flex>
+              <Box pb="40px">
+                <Text p="0" m="2" fontSize={"20px"} fontWeight={500}>
+                  Traditional Items
+                </Text>
                 <Text p="0" m="2" fontSize={"16"}>
-                  Lip Balm
+                  Sindoor
                 </Text>
                 <Text fontSize={"16"} p="0" m="2">
-                  Lip Guard
+                  Kajal
                 </Text>
                 <Text fontSize={"16"} p="0" m="2"></Text>
-                <Text fontSize={"16"} color="teal" fontWeight={"500"} mt="35px">
-                  View Details
+                <Text fontSize={"16"} color="teal" fontWeight={"500"} mt="40px">
+                  <Link to="/product">View Details</Link>
                 </Text>
               </Box>
             </Box>
