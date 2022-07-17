@@ -89,8 +89,7 @@ export const removeItemAction = (data) => {
 };
 
 export const removeItem = (id) => (dispatch) => {
-  axios
-    .delete(`https://blueheavenapi.herokuapp.com/products/${id}`)
+  axios.delete(`https://blueheavenapi.herokuapp.com/productcart/${id}`)
     .then((res) => {
       // console.log(res.data);
       dispatch(removeItemAction(res.data));
