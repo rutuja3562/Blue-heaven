@@ -8,12 +8,10 @@ import {
   Button,
 } from "@chakra-ui/react";
 import { Navigate, useNavigate } from "react-router";
-import { Topnavbar } from "./Navbar/Topnavbar";
 export const Checkout = () => {
   const navigate = useNavigate();
   return (
     <Box width={"100%"}>
-      <Topnavbar />
       <Box
         width={"75%"}
         margin="auto"
