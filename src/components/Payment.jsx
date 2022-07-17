@@ -12,7 +12,7 @@ import {
 } from "@chakra-ui/react";
 import { Navigate, useNavigate } from "react-router";
 import { useDispatch, useSelector } from "react-redux";
-import { LogedIn } from "../Login/LogedIn";
+
 
 export const Payment = () => {
   const navigate = useNavigate();
