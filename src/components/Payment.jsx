@@ -189,7 +189,7 @@ export const Payment = () => {
                       errorBorderColor="#e8e8e8"
                       borderRadius="0"
                       borderWidth="0.025px"
-                      bg="#84c225"
+                      bg="black"
                       onClick={() => {
                         if (cvv == "" || year == "" || card == "") {
                           alert("Enter all Fields");
