@@ -6,6 +6,7 @@ import { Home } from './Home'
 import { Product } from './Product';
 import { ProductDetails } from './ProductDetails';
 import {Payment} from "./Payment"
+import { Signup } from './Signup';
 export const AllRoutes = () => {
   return (
     <div>
@@ -16,6 +17,7 @@ export const AllRoutes = () => {
         <Route path="/cart" element={<Cart />} />
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/payment" element={<Payment />}></Route>
+        <Route path="/signup" element={Signup}/>
       </Routes>
     </div>
   );

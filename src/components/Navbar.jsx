@@ -1,12 +1,10 @@
-// rafce
+
 import React, { useState, useEffect } from "react";
-// import logo from "./Logos/Logo.svg";
-// import help from "./Images/customer.svg";
 import styled from "styled-components";
-// import group from "./Logos/Group.png";
-// import { Signup } from "../Signup/SignUp";
-import { Text } from "@chakra-ui/react";
+import { Text ,Box} from "@chakra-ui/react";
 import { Link } from "react-router-dom";
+import { Signup } from "./Signup";
+import { Login } from "./Login";
 const Nav = styled.nav`
   display: flex;
   justify-content: space-around;
@@ -164,7 +162,10 @@ export const Navbar = () => {
   useEffect(() => {
     handleurl();
   }, []);
-
+// const signup=() => {
+//   setLogin(false);
+//  <Signup/>
+//    }
   return (
     <>
       <Nav>
@@ -186,15 +187,17 @@ export const Navbar = () => {
           <li>
             <Text className="textTT">Contact Us</Text>
           </li>
-          <li>
+          {/*
+         <li>
             {login ? (
               <Text
                 className="login"
                 data-bs-toggle="modal"
                 href="#exampleModalToggle"
                 role="button"
-                onClick={() => {
+                onClick={()=>{
                   setLogin(false);
+                  <Signup/>
                 }}
               >
                 LOG IN
@@ -211,6 +214,9 @@ export const Navbar = () => {
                 LOG OUT
               </Text>
             )}
+              </li>*/}
+          <li>
+            <Login/>
           </li>
           <li className="user">
             <a className="user">
@@ -229,7 +235,6 @@ export const Navbar = () => {
           </button>
         </ul>
       </Nav>
-      {/*<Signup handleurl={handleurl}></Signup>*/}
     </>
   );
 };
