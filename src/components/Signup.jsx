@@ -16,11 +16,6 @@ export const Signup = () => {
     alert(random);
   };
   const checkotp = (e) => {
-    // if (e.target.value == random) {
-    //   alert("Login Sucessful");
-    //   login(true);
-    // }
- 
 
       setTimeout(() => {
         if (e.target.value == random) {
@@ -29,10 +24,6 @@ export const Signup = () => {
           alert("Login Unsucessful");
         }
       }, 4000);
-  
-//   else{
-//        alert("Login Unsucessful");
-//   }
   }
   return (
     <Box

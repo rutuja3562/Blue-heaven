@@ -45,10 +45,16 @@ export const Login = () => {
           vertical: "top",
           horizontal: "left",
         }}
-       
+        focusBorderColor="white"
+        errorBorderColor="#84c225"
+        schema="white"
         // style={{display:"flex" ,justifiedContent:"center" ,alignItems:"center"}}
       >
-        <PopoverContent style={{ marginLeft: "180%", marginTop: "20%" }}>
+        <PopoverContent
+          focusBorderColor="white"
+          errorBorderColor="#84c225"
+          style={{ marginLeft: "180%", marginTop: "20%" }}
+        >
           <Signup />
           <Button
             varient={"solid"}
