@@ -39,7 +39,7 @@ export const Product = () => {
 
   useEffect(() => {
     getdata();
-  }, []);
+  }, [setProducts]);
   const getdata = async () => {
     await fetch("https://blueheavenapi.herokuapp.com/products")
       .then((data) => data.json())
@@ -116,41 +116,42 @@ export const Product = () => {
     };
     
 
-     const priceHandler = async (value) => {
-    setPriceValue(value);
+     const priceHandler = async (e) => {
+      // console.log(e.target.value)
+    setPriceValue(e.target.value);
     const data = await fetch(
       "https://blueheavenapi.herokuapp.com/products"
     ).then((d) => d.json());
 
-    if (value == "0-50") {
+    if (e.target.value == "0-50") {
       const filteredArr = data.filter((a) => {
         if (a.price >= 0 && a.price <= 50) {
           return a;
         }
       });
       setProducts(filteredArr);
-    } else if (value == "51-150") {
+    } else if (e.target.value == "51-150") {
       const filteredArr = data.filter((a) => {
         if (a.price > 51 && a.price <= 150) {
           return a;
         }
       });
       setProducts(filteredArr);
-    } else if (value == "151-300") {
+    } else if (e.target.value == "151-300") {
       const filteredArr = data.filter((a) => {
         if (a.price > 151 && a.price <= 300) {
           return a;
         }
       });
       setProducts(filteredArr);
-    } else if (value == "301-400") {
+    } else if (e.target.value == "301-400") {
       const filteredArr = data.filter((a) => {
         if (a.price > 301 && a.price <= 400) {
           return a;
         }
-      })
+      });
       setProducts(filteredArr);
-    } else if (value == "401-1000") {
+    } else if (e.target.value == "401-1000") {
       const filteredArr = data.filter((a) => {
         if (a.price > 401 && a.price <= 1000) {
           return a;
@@ -237,10 +238,10 @@ export const Product = () => {
                   >
                     <option border="1px solid blue">Brand</option>
                     <option value="Lakme">Lakme</option>
-                    <option value="MAYBELLINE NEW YORK">MAYBELLINE</option>
                     <option value="Dabar">Dabar</option>
                     <option value="Rosy">Rosy</option>
                     <option value="Revlon">Revlon</option>
+                    <option value="MAYBELLINE NEW YORK">MAYBELLINE</option>
                   </Select>
                 </Box>
                 <Box mb={"2rem"} width="185px" ml="20px">
@@ -256,11 +257,11 @@ export const Product = () => {
                     // padding={0}
                   >
                     <option>Price</option>
-                    <option value="Lakme">0-50</option>
-                    <option value="MAYBELLINE NEW YORK">51-150</option>
-                    <option value="MAYBELLINE NEW YORK">151-300</option>
-                    <option value="MAYBELLINE NEW YORK">301-400</option>
-                    <option value="MAYBELLINE NEW YORK">401-1000</option>
+                    <option value="0-50">0-50</option>
+                    <option value="51-150">51-150</option>
+                    <option value="151-300">151-300</option>
+                    <option value="301-400">301-400</option>
+                    <option value="401-1000">401-1000</option>
                   </Select>
                 </Box>
               </Flex>
