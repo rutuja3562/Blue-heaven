@@ -1,10 +1,11 @@
-
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import { Text ,Box} from "@chakra-ui/react";
+import { Text, Box, useDisclosure } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import { Signup } from "./Signup";
 import { Login } from "./Login";
+
+
 const Nav = styled.nav`
   display: flex;
   justify-content: space-around;
@@ -156,16 +157,17 @@ export const Navbar = () => {
   const [isMob, setIsMob] = useState(false);
   const [profile, setProfile] = useState("");
   const [login, setLogin] = useState(true);
+  const { isOpen, onOpen, onClose } = useDisclosure();
   const handleurl = (e) => {
     setProfile(e);
   };
   useEffect(() => {
     handleurl();
   }, []);
-// const signup=() => {
-//   setLogin(false);
-//  <Signup/>
-//    }
+  // const signup=() => {
+  //   setLogin(false);
+  //  <Signup/>
+  //    }
   return (
     <>
       <Nav>
@@ -216,7 +218,7 @@ export const Navbar = () => {
             )}
               </li>*/}
           <li>
-            <Login/>
+            <Login />
           </li>
           <li className="user">
             <a className="user">
@@ -238,4 +240,3 @@ export const Navbar = () => {
     </>
   );
 };
-

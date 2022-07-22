@@ -10,30 +10,45 @@ export const Signup = () => {
   const { isOpen, onToggle, onClose } = useDisclosure();
   const [login, setLogin] = useState(false);
   const navigate = useNavigate();
-  
+
   var random = Math.floor(Math.random(4) * 10000);
   const handleotp = () => {
     alert(random);
   };
   const checkotp = (e) => {
-   if (e.target.value == random) {
-     alert("Login Sucessful");
-   login(true)
-   }
-    // setTimeout(() => {
-    //   if (e.target.value == random) {
-    //     alert("Login Sucessful");
-    //    navigate("/");
-    //   } else {
-    //     alert("Login Unsucessful");
-    //     navigate("/login")
-    //   }
-    // }, 4000);
-  };
+    // if (e.target.value == random) {
+    //   alert("Login Sucessful");
+    //   login(true);
+    // }
+ 
 
+      setTimeout(() => {
+        if (e.target.value == random) {
+          alert("Login Sucessful");
+        } else {
+          alert("Login Unsucessful");
+        }
+      }, 4000);
+  
+//   else{
+//        alert("Login Unsucessful");
+//   }
+  }
   return (
-    <Box className="signupdiv" width="100%" height={"500px"} margin={"auto"} bg="white" >
-      <Box margin={"auto"} width={"100%"} mt={"5rem"} padding="1rem">
+    <Box
+      className="signupdiv"
+      width="100%"
+      height={"365px"}
+      margin={"auto"}
+      bg="white"
+    >
+      <Box
+        margin={"auto"}
+        width={"100%"}
+        mt={"5rem"}
+        padding="1rem"
+        onClick={onClose}
+      >
         <Box fontSize={"12px"} fontWeight="300">
           <Text
             fontSize={"16px"}
@@ -100,23 +115,9 @@ export const Signup = () => {
             required
             onChange={(e) => {
               checkotp(e);
-
             }}
           />
-          <Button
-            varient={"solid"}
-            bg={"#84c225"}
-            schema="white"
-            color="white"
-            width={"100%"}
-            fontSize={"14px"}
-            fontWeight="450"
-            onClick={() => {
-             navigate("/product")
-            }}
-          >
-            Continue
-          </Button>
+          
         </Box>
       </Box>
     </Box>
