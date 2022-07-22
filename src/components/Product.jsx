@@ -10,6 +10,7 @@ import { fetchData } from "../Redux/product/action";
 import { ProductComponent } from "./ProductComponent";
 import { useDispatch, useSelector } from "react-redux/es/exports";
 import { useNavigate, useSearchParams } from "react-router-dom";
+import { MdLocalDining } from "react-icons/md";
 export const Product = () => {
    const product = useSelector((state) => state);
    const dispatch = useDispatch();
@@ -21,6 +22,7 @@ export const Product = () => {
 
    // ***product component****//
    const navigate = useNavigate();
+   const[loding,setLoding]=useState(true)
    const [searchParams, setSearchParams] = useSearchParams();
    const [brandValue, setBrandValue] = useState(
      searchParams.getAll("brand") || []
@@ -39,6 +41,7 @@ export const Product = () => {
 
   useEffect(() => {
     getdata();
+     
   }, [setProducts]);
   const getdata = async () => {
     await fetch("https://blueheavenapi.herokuapp.com/products")
@@ -188,111 +191,121 @@ export const Product = () => {
     orderValue,
     packSize,
   ]);
+ 
   return (
     <Box width={"75%"} margin="auto" mt="1rem">
-      <Box mt={"20px"} mb={"20px"}></Box>
-      <Box border={"1px solid #e8e8e8"}>
-        <Flex>
-          <Box width={"100%"} textAlign={"left"} m={"1rem"} fontWeight={300}>
-            <Text
-              fontSize={"16px"}
-              fontWeight={400}
-              borderBottom={"1px solid #e8e8e8"}
-            >
-              Products & Services
-            </Text>
+     
+        <Box w={"100%"}>
+          <Box mt={"20px"} mb={"20px"}></Box>
+          <Box border={"1px solid #e8e8e8"}>
             <Flex>
-              <Flex width={"100%"} mt={"1.5rem"}>
-                <Box width="25%">
-                  <Text fontSize={"16px"} fontWeight={400}>
-                    Makeup
-                  </Text>
-                </Box>
-                <Box mb={"2rem"} width="185px" ml="10px">
-                  <Select
-                    id="cars1"
-                    borderColor="1px solid black"
-                    _hover={{ border: "black" }}
-                    borderWidth="1px"
-                    width="100%"
-                    focusBorderColor="black"
-                    borderRadius="0"
-                    onChange={HandleSelect}
-                    p={0}
-                  >
-                    <option>price</option>
-                    <option value="low">Low To High</option>
-                    <option value="high">High To Low</option>
-                  </Select>
-                </Box>
-                <Box mb={"2rem"} width="185px" ml="20px">
-                  <Select
-                    id="cars1"
-                    onChange={brandValueHandler}
-                    borderColor="1px solid black"
-                    _hover={{ border: "black" }}
-                    borderWidth="1px"
-                    width="100%"
-                    focusBorderColor="black"
-                    borderRadius="0"
-                  >
-                    <option border="1px solid blue">Brand</option>
-                    <option value="Lakme">Lakme</option>
-                    <option value="Dabar">Dabar</option>
-                    <option value="Rosy">Rosy</option>
-                    <option value="Revlon">Revlon</option>
-                    <option value="MAYBELLINE NEW YORK">MAYBELLINE</option>
-                  </Select>
-                </Box>
-                <Box mb={"2rem"} width="185px" ml="20px">
-                  <Select
-                    id="cars1"
-                    onChange={priceHandler}
-                    borderColor="1px solid black"
-                    _hover={{ border: "black" }}
-                    borderWidth="1px"
-                    width="100%"
-                    focusBorderColor="black"
-                    borderRadius="0"
-                    // padding={0}
-                  >
-                    <option>Price</option>
-                    <option value="0-50">0-50</option>
-                    <option value="51-150">51-150</option>
-                    <option value="151-300">151-300</option>
-                    <option value="301-400">301-400</option>
-                    <option value="401-1000">401-1000</option>
-                  </Select>
-                </Box>
-              </Flex>
-            </Flex>
-          </Box>
-        </Flex>
-        <Flex>
-          <Box width="100%" borderLeft={"1px solid #e8e8e8"}>
-            <Stack
-              width={"97%"}
-              direction="row"
-              alignItems={"center"}
-              justifyContent={"space-between"}
-            >
-              <Text
+              <Box
+                width={"100%"}
                 textAlign={"left"}
                 m={"1rem"}
-                fontSize={"20px"}
-                fontWeight={400}
+                fontWeight={300}
               >
-                Products ({products.length})
-              </Text>
-            </Stack>
-            <Flex flexWrap={"wrap"} borderTop={"1px solid #e8e8e8"}>
-              {products.map((e) => {
-                return <ProductComponent key={e._id} props={e} />;
-              })}
+                <Text
+                  fontSize={"16px"}
+                  fontWeight={400}
+                  borderBottom={"1px solid #e8e8e8"}
+                >
+                  Products & Services
+                </Text>
+                <Flex>
+                  <Flex width={"100%"} mt={"1.5rem"}>
+                    <Box width="25%">
+                      <Text fontSize={"16px"} fontWeight={400}>
+                        Makeup
+                      </Text>
+                    </Box>
+                    <Box mb={"2rem"} width="185px" ml="10px">
+                      <Select
+                        id="cars1"
+                        borderColor="1px solid black"
+                        _hover={{ border: "black" }}
+                        borderWidth="1px"
+                        width="100%"
+                        focusBorderColor="black"
+                        borderRadius="0"
+                        onChange={HandleSelect}
+                        p={0}
+                      >
+                        <option>price</option>
+                        <option value="low">Low To High</option>
+                        <option value="high">High To Low</option>
+                      </Select>
+                    </Box>
+                    <Box mb={"2rem"} width="185px" ml="20px">
+                      <Select
+                        id="cars1"
+                        onChange={brandValueHandler}
+                        borderColor="1px solid black"
+                        _hover={{ border: "black" }}
+                        borderWidth="1px"
+                        width="100%"
+                        focusBorderColor="black"
+                        borderRadius="0"
+                      >
+                        <option border="1px solid blue">Brand</option>
+                        <option value="Lakme">Lakme</option>
+                        <option value="Dabar">Dabar</option>
+                        <option value="Rosy">Rosy</option>
+                        <option value="Revlon">Revlon</option>
+                        <option value="MAYBELLINE NEW YORK">MAYBELLINE</option>
+                      </Select>
+                    </Box>
+                    <Box mb={"2rem"} width="185px" ml="20px">
+                      <Select
+                        id="cars1"
+                        onChange={priceHandler}
+                        borderColor="1px solid black"
+                        _hover={{ border: "black" }}
+                        borderWidth="1px"
+                        width="100%"
+                        focusBorderColor="black"
+                        borderRadius="0"
+                        // padding={0}
+                      >
+                        <option>Price</option>
+                        <option value="0-50">0-50</option>
+                        <option value="51-150">51-150</option>
+                        <option value="151-300">151-300</option>
+                        <option value="301-400">301-400</option>
+                        <option value="401-1000">401-1000</option>
+                      </Select>
+                    </Box>
+                  </Flex>
+                </Flex>
+              </Box>
+            </Flex>
+            <Flex>
+              <Box width="100%" borderLeft={"1px solid #e8e8e8"}>
+                <Stack
+                  width={"97%"}
+                  direction="row"
+                  alignItems={"center"}
+                  justifyContent={"space-between"}
+                >
+                  <Text
+                    textAlign={"left"}
+                    m={"1rem"}
+                    fontSize={"20px"}
+                    fontWeight={400}
+                  >
+                    Products ({products.length})
+                  </Text>
+                </Stack>
+                <Flex flexWrap={"wrap"} borderTop={"1px solid #e8e8e8"}>
+                  {products.map((e) => {
+                    return <ProductComponent key={e._id} props={e} />;
+                  })}
+                </Flex>
+              </Box>
             </Flex>
           </Box>
-        </Flex>
-      </Box>
+        </Box>
     </Box>
   );
+  
 };
