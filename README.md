@@ -2,7 +2,7 @@
 
 ## Introduction 
 
-The best online grocery store in India. bigbasket is an online supermarket for all your daily needs. I was cloned Big Basket website using react-Redux.
+The best online Buety product shopping website in India.  I was cloned Blue Heaven website using react-Redux.
 This is my individual project based on React and Redux.
 
 ### Tech-stack used
