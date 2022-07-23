@@ -1,6 +1,7 @@
 # Bigbasket Clone
 
 ## Introduction 
+
 The best online grocery store in India. bigbasket is an online supermarket for all your daily needs. I was cloned Big Basket website using react-Redux.
 This is my individual project based on React and Redux.
 
@@ -9,7 +10,6 @@ This is my individual project based on React and Redux.
 Frontend : React JS
 
 Backend   : Node Js
-
 
 State Management : Redux
 
